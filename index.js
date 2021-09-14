@@ -8,7 +8,7 @@ import rgb2hex from 'rgb2hex';
 
 class LinearGradient extends Component {
   render() {
-    const { color0, color1, children, points } = this.props;
+    const { color0, color1, children, points, style } = this.props;
     const gStart = points.start;
     const gEnd = points.end;
     return (
@@ -17,7 +17,7 @@ class LinearGradient extends Component {
         colors={[color0, color1].map((c) => rgb2hex(c).hex)}
         start={gStart}
         end={gEnd}
-        style={[styles.linearGradient]}>
+        style={[styles.linearGradient, ...style]}>
         {children}
       </NativeLinearGradient>
     )
